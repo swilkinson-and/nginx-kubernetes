@@ -1,0 +1,8 @@
+# Define templated configuration based on the EKS cluster
+{{- if eq .Values.clusterName "development-core-cluster" }}
+config:
+  key: "2"
+{{- else if eq .Values.clusterName "core-cluster" }}
+config:
+  key: "1"
+{{- end }}
